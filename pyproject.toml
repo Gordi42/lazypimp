@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lazypimp"
+version = "0.0.1"
+authors = [
+  { name="Silvano Rosenau", email="silvano.rosenau@uni-hamburg.de" },
+]
+description = "A Python package to lazy import modules and functions."
+readme = "README.md"
+keywords = ["lazy", "import", "module", "function", "package", "python", "lazypimp"]
+requires-python = ">=3.8"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Development Status :: 2 - Alpha",
+]
+dependencies = [ ]
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/Gordi42/FRIDOM"
+
+[tool.setuptools.packages.find]
+where = ["src"]
