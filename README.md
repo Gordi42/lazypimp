@@ -6,10 +6,6 @@ using pip:
 ```bash
 pip install lazypimp
 ```
-using conda:
-```bash
-conda install -c conda-forge lazypimp
-```
 
 ## Usage
 Let's say we have a file structure as follows:
