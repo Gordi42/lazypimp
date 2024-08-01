@@ -22,7 +22,7 @@ dependencies = [ ]
 license = {file = "LICENSE"}
 
 [project.urls]
-Repository = "https://github.com/Gordi42/FRIDOM"
+Repository = "https://github.com/Gordi42/lazypimp"
 
 [tool.setuptools.packages.find]
 where = ["src"]
