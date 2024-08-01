@@ -49,3 +49,34 @@ all_imports_by_origin = {
 
 setup(__name__, all_modules_by_origin, all_imports_by_origin)
 ```
+
+## Type Checking
+A disadvantage of the lazy import system is that the imports are not recognized py the
+type checker. Hence, language server as for example pylance do not show the imports.
+A workaround for this problem is to load all the modules in a TYPE_CHECKING environment:
+```python
+
+from typing import TYPE_CHECKING
+from lazypimp import setup
+
+if TYPE_CHECKING:
+    # imports of submodules
+    from mymodule import submod1, submod2, submod3 as sm3
+    from mymodule.subpackage import submod4
+
+    # imports of classes, functions, etc.
+    from mymodule.class1 import MyClass1
+    from mymodule.functions import my_function
+
+all_modules_by_origin = {
+    "mymodule": ["submod1", "submod2", {"sm3": "submod3"}], 
+    "mymodule.subpackage": ["submod4"]
+}
+
+all_imports_by_origin = {
+    "mymodule.class1": "MyClass1",
+    "mymodule.functions": "my_function"
+}
+
+setup(__name__, all_modules_by_origin, all_imports_by_origin)
+```
